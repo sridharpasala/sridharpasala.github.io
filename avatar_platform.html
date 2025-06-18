@@ -14,11 +14,11 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
         }
         
         .text-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -80,22 +80,17 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                    </svg>
-                    Back to Portfolio
-                </a>
-                <div class="text-xl font-bold text-gradient">Avatar Platform</div>
+                <a href="index.html" class="text-2xl font-bold text-gradient">Sridhar Pasala</a>
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors">← Back to Portfolio</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
+    <section class="pt-24 pb-12 gradient-bg text-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6">Avatar Platform</h1>
@@ -126,21 +121,21 @@
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
                             <span class="text-gray-700">True portability via .vtr packages</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
                             <span class="text-gray-700">Persistent state & memory across sessions</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                             <span class="text-gray-700">Secure WASM plugin sandboxing</span>
                         </div>
                     </div>
                 </div>
                 <div>
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">Key Architecture Components</h3>
 
                     <div class="space-y-4">
@@ -632,7 +627,7 @@
                 <p class="text-gray-600 mb-4">
                     These professional mockups showcase the Avatar Platform's sophisticated architecture and capabilities envisioned in the v1.6 requirements specification.
                 </p>
-                <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">
+                <div class="inline-flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full text-sm">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
@@ -650,7 +645,7 @@
                 Learn more about this research project and the future of autonomous AI agents
             </p>
             <div class="flex justify-center gap-4">
-                <a href="mailto:pasala.sridhar@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-colors">
+                <a href="mailto:pasala.sridhar@gmail.com" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full transition-colors">
                     Contact for Details
                 </a>
                 <a href="index.html" class="border border-gray-600 hover:border-gray-400 px-6 py-3 rounded-full transition-colors">
