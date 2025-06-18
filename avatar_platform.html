@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Platform - Project Details | Sridhar Pasala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;  
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .screenshot {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid #475569;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .terminal-green { color: #22c55e; }
+        .terminal-blue { color: #3b82f6; }
+        .terminal-yellow { color: #eab308; }
+        .terminal-red { color: #ef4444; }
+        .terminal-purple { color: #a855f7; }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #3b82f6);
+            border-radius: 2px;
+        }
+        
+        .metric-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #334155;
+            border-radius: 8px;
+        }
+        
+        .code-line {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Portfolio
+                </a>
+                <div class="text-xl font-bold text-gradient">Avatar Platform</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Avatar Platform</h1>
+                <p class="text-xl md:text-2xl opacity-90 mb-8">
+                    Building Autonomous, Stateful & Portable AI Agents
+                </p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Rust Framework</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm">WASM Plugins</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Research Project</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm">v1.6 Spec</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-gradient">Project Overview</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        The Avatar Platform is a comprehensive framework for building, deploying, and managing sophisticated AI agents that maintain persistent identity, memory, and state across sessions. Built in Rust with a modular architecture, the platform enables developers to create autonomous agents capable of complex reasoning, planning, and collaboration.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Unlike traditional orchestration frameworks that manage stateless LLM calls externally, Avatars own their identity, state, goals, and capabilities internally through modular "Capabilities" while leveraging external LLMs for reasoning.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700">True portability via .vtr packages</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-gray-700">Persistent state & memory across sessions</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+                            <span class="text-gray-700">Secure WASM plugin sandboxing</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Key Architecture Components</h3>
+
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-800 mb-2">🧠 avatar-runtime</h4>
+                            <p class="text-gray-600 text-sm">Standardized execution environment for Avatar instances</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-800 mb-2">📦 .vtr Packages</h4>
+                            <p class="text-gray-600 text-sm">Portable containers with state, memory, plugins, and configuration</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-800 mb-2">🔧 Modular Capabilities</h4>
+                            <p class="text-gray-600 text-sm">Rust crates implementing specific functionality and traits</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-808 mb-2">🔒 WASM Plugins</h4>
+                            <p class="text-gray-600 text-sm">Sandboxed external plugins for runtime extensibility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gradient">Platform Mockups</h2>
+            <p class="text-center text-gray-600 mb-12">
+                Professional mockups showcasing the Avatar Platform's sophisticated architecture and capabilities
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Screenshot 1: Main Dashboard -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Avatar Platform Dashboard</h2>
+                    <div class="flex gap-2">
+                        <div class="status-dot bg-green-500"></div>
+                        <div class="status-dot bg-yellow-500"></div>
+                        <div class="status-dot bg-red-500"></div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="metric-card p-4">
+                        <div class="text-2xl font-bold terminal-green">24</div>
+                        <div class="text-sm text-gray-400">Active Avatars</div>
+                    </div>
+                    <div class="metric-card p-4">
+                        <div class="text-2xl font-bold terminal-blue">156</div>
+                        <div class="text-sm text-gray-400">Total .vtr Packages</div>
+                    </div>
+                    <div class="metric-card p-4">
+                        <div class="text-2xl font-bold terminal-purple">8</div>
+                        <div class="text-sm text-gray-400">Swarm Networks</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-slate-800 rounded">
+                        <div class="flex items-center gap-3">
+                            <div class="status-dot bg-green-500"></div>
+                            <span class="font-mono text-sm">CodeReviewAvatar-v1.2.vtr</span>
+                        </div>
+                        <div class="text-xs text-gray-400">CPU: 15% | Memory: 234MB</div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-slate-800 rounded">
+                        <div class="flex items-center gap-3">
+                            <div class="status-dot bg-blue-500"></div>
+                            <span class="font-mono text-sm">DataAnalysisAvatar-v2.1.vtr</span>
+                        </div>
+                        <div class="text-xs text-gray-400">CPU: 8% | Memory: 512MB</div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-slate-800 rounded">
+                        <div class="flex items-center gap-3">
+                            <div class="status-dot bg-yellow-500"></div>
+                            <span class="font-mono text-sm">CustomerSupportAvatar-v1.0.vtr</span>
+                        </div>
+                        <div class="text-xs text-gray-400">CPU: 45% | Memory: 1.2GB</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-slate-800 rounded">
+                    <div class="text-sm font-semibold mb-2">System Health</div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs">
+                            <span>Runtime Performance</span>
+                            <span class="terminal-green">98.5%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 98.5%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot 2: Agent Configuration -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Avatar Configuration</h2>
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm">Deploy Avatar</button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-2 terminal-blue">avatar_config.yaml</div>
+                        <div class="code-line space-y-1 text-xs text-gray-300">
+                            <div><span class="terminal-yellow">name:</span> "ResearchAssistantAvatar"</div>
+                            <div><span class="terminal-yellow">version:</span> "1.0.0"</div>
+                            <div><span class="terminal-yellow">runtime:</span> "avatar-runtime-v0.8"</div>
+                            <div><span class="terminal-yellow">capabilities:</span></div>
+                            <div class="ml-4">- <span class="terminal-green">web_search</span></div>
+                            <div class="ml-4">- <span class="terminal-green">document_analysis</span></div>
+                            <div class="ml-4">- <span class="terminal-green">llm_integration</span></div>
+                            <div><span class="terminal-yellow">plugins:</span></div>
+                            <div class="ml-4">- <span class="terminal-purple">research_tools.wasm</span></div>
+                            <div class="ml-4">- <span class="terminal-purple">pdf_processor.wasm</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-2 terminal-blue">Memory Configuration</div>
+                        <div class="grid grid-cols-2 gap-3 text-xs">
+                            <div>
+                                <div class="text-gray-400">Vector Store</div>
+                                <div class="terminal-green">Qdrant (Local)</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400">State DB</div>
+                                <div class="terminal-green">SQLite</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400">Context Window</div>
+                                <div class="terminal-yellow">32k tokens</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400">Memory Limit</div>
+                                <div class="terminal-yellow">2GB</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-2 terminal-blue">Build Status</div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span>✅ Capability crates compiled</span>
+                                <span class="terminal-green">Success</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>✅ WASM plugins validated</span>
+                                <span class="terminal-green">Success</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>✅ .vtr package created</span>
+                                <span class="terminal-green">234MB</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>⏳ Binary optimization</span>
+                                <span class="terminal-yellow">In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot 3: Swarm Communication -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Swarm Network</h2>
+                    <div class="flex gap-2">
+                        <div class="px-3 py-1 bg-green-600 rounded-full text-xs">8 Nodes Active</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">gRPC Communication Map</div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                <span>CoordinatorAvatar</span>
+                                <span class="text-gray-400">→</span>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>WorkerAvatar-1</span>
+                                <span class="terminal-green text-xs">Active</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                <span>CoordinatorAvatar</span>
+                                <span class="text-gray-400">→</span>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>WorkerAvatar-2</span>
+                                <span class="terminal-green text-xs">Active</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>WorkerAvatar-1</span>
+                                <span class="text-gray-400">↔</span>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>WorkerAvatar-2</span>
+                                <span class="terminal-yellow text-xs">Syncing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Service Discovery</div>
+                        <div class="code-line space-y-1 text-xs">
+                            <div><span class="terminal-green">✓</span> consul://localhost:8500</div>
+                            <div><span class="terminal-green">✓</span> etcd://cluster.local:2379</div>
+                            <div class="text-gray-400 mt-2">Registered Services:</div>
+                            <div class="ml-4">- avatar-coordinator-svc</div>
+                            <div class="ml-4">- avatar-worker-pool-svc</div>
+                            <div class="ml-4">- avatar-storage-svc</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Message Queue</div>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span>Task Distribution</span>
+                                <span class="terminal-green">47 msgs/sec</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Result Aggregation</span>
+                                <span class="terminal-blue">23 msgs/sec</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Health Checks</span>
+                                <span class="terminal-yellow">8 msgs/sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot 4: Performance Monitoring -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Performance Monitor</h2>
+                    <div class="text-xs text-gray-400">Real-time • 1.2s refresh</div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Runtime Metrics</div>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <div class="text-gray-400 mb-1">CPU Usage</div>
+                                <div class="flex items-center gap-2">
+                                    <div class="progress-bar flex-1">
+                                        <div class="progress-fill" style="width: 32%"></div>
+                                    </div>
+                                    <span class="terminal-green">32%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 mb-1">Memory Usage</div>
+                                <div class="flex items-center gap-2">
+                                    <div class="progress-bar flex-1">
+                                        <div class="progress-fill" style="width: 67%"></div>
+                                    </div>
+                                    <span class="terminal-yellow">67%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 mb-1">Network I/O</div>
+                                <div class="terminal-blue">↑ 234 MB/s ↓ 156 MB/s</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 mb-1">Disk I/O</div>
+                                <div class="terminal-purple">R: 45 MB/s W: 23 MB/s</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">LLM Integration Stats</div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span>Total API Calls</span>
+                                <span class="terminal-green">15,847</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Avg Response Time</span>
+                                <span class="terminal-blue">1.2s</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tokens Processed</span>
+                                <span class="terminal-purple">2.3M</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Context Cache Hit Rate</span>
+                                <span class="terminal-green">94.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Error Tracking</div>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span class="terminal-red">⚠ Plugin Load Failures</span>
+                                <span>2</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="terminal-yellow">⚠ Connection Timeouts</span>
+                                <span>5</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="terminal-green">✓ Successful Operations</span>
+                                <span>99.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot 5: Plugin Management -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Plugin Manager</h2>
+                    <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm">Install Plugin</button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">WASM Plugins</div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded text-xs">
+                                <div class="flex items-center gap-2">
+                                    <div class="status-dot bg-green-500"></div>
+                                    <span>web_scraper.wasm</span>
+                                    <span class="text-gray-400">v2.1.0</span>
+                                </div>
+                                <span class="terminal-green">Loaded</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded text-xs">
+                                <div class="flex items-center gap-2">
+                                    <div class="status-dot bg-green-500"></div>
+                                    <span>file_processor.wasm</span>
+                                    <span class="text-gray-400">v1.8.3</span>
+                                </div>
+                                <span class="terminal-green">Loaded</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded text-xs">
+                                <div class="flex items-center gap-2">
+                                    <div class="status-dot bg-yellow-500"></div>
+                                    <span>api_connector.wasm</span>
+                                    <span class="text-gray-400">v3.0.1</span>
+                                </div>
+                                <span class="terminal-yellow">Loading</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Capability Crates</div>
+                        <div class="code-line space-y-1 text-xs">
+                            <div><span class="terminal-green">✓</span> avatar-core v0.8.0</div>
+                            <div><span class="terminal-green">✓</span> avatar-memory v0.7.2</div>
+                            <div><span class="terminal-green">✓</span> avatar-llm v0.6.5</div>
+                            <div><span class="terminal-green">✓</span> avatar-tools v0.5.8</div>
+                            <div><span class="terminal-yellow">⚠</span> avatar-swarm v0.3.1 <span class="text-gray-400">(beta)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Security Sandbox</div>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span>WASM Runtime</span>
+                                <span class="terminal-green">Wasmtime 25.0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Memory Isolation</span>
+                                <span class="terminal-green">Enabled</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>File System Access</span>
+                                <span class="terminal-yellow">Restricted</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Network Access</span>
+                                <span class="terminal-yellow">Controlled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot 6: .vtr Package Manager -->
+            <div class="screenshot rounded-lg p-6 text-white">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">.vtr Package Manager</h2>
+                    <div class="flex gap-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs">Import</button>
+                        <button class="bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-xs">Export</button>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Package Structure</div>
+                        <div class="code-line text-xs space-y-1">
+                            <div>📦 ResearchAssistant-v1.0.vtr/</div>
+                            <div class="ml-4">├── avatar_config.yaml</div>
+                            <div class="ml-4">├── state.db <span class="text-gray-400">(SQLite)</span></div>
+                            <div class="ml-4">├── memory/</div>
+                            <div class="ml-8">├── vectors.index <span class="text-gray-400">(Qdrant)</span></div>
+                            <div class="ml-8">└── summaries.json</div>
+                            <div class="ml-4">├── plugins/</div>
+                            <div class="ml-8">├── research_tools.wasm</div>
+                            <div class="ml-8">└── pdf_processor.wasm</div>
+                            <div class="ml-4">└── logs/</div>
+                            <div class="ml-8">└── runtime.log</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Package Registry</div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded">
+                                <div>
+                                    <div class="font-semibold">CodeReviewAvatar</div>
+                                    <div class="text-gray-400">Automated code review and suggestions</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="terminal-green">v1.2.0</div>
+                                    <div class="text-gray-400">234 MB</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded">
+                                <div>
+                                    <div class="font-semibold">DataAnalysisAvatar</div>
+                                    <div class="text-gray-400">Statistical analysis and visualization</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="terminal-blue">v2.1.0</div>
+                                    <div class="text-gray-400">512 MB</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-slate-700 rounded">
+                                <div>
+                                    <div class="font-semibold">CustomerSupportAvatar</div>
+                                    <div class="text-gray-400">Multi-channel customer support agent</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="terminal-purple">v1.0.0</div>
+                                    <div class="text-gray-400">1.2 GB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-4 rounded">
+                        <div class="text-sm font-semibold mb-3 terminal-blue">Deployment Status</div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span>Total Packages</span>
+                                <span class="terminal-green">156</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Active Deployments</span>
+                                <span class="terminal-blue">24</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Storage Used</span>
+                                <span class="terminal-yellow">45.2 GB</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Registry Sync</span>
+                                <span class="terminal-green">Up to date</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-4">
+                    These professional mockups showcase the Avatar Platform's sophisticated architecture and capabilities envisioned in the v1.6 requirements specification.
+                </p>
+                <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Technology Stack: Rust + Tokio + WASM + Qdrant + YAML
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">Interested in the Avatar Platform?</h3>
+            <p class="text-gray-300 mb-6">
+                Learn more about this research project and the future of autonomous AI agents
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="mailto:pasala.sridhar@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-colors">
+                    Contact for Details
+                </a>
+                <a href="index.html" class="border border-gray-600 hover:border-gray-400 px-6 py-3 rounded-full transition-colors">
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

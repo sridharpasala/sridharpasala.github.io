@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobustAI Platform - Gallery | Sridhar Pasala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;  
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gallery-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoom 0.3s;
+            border-radius: 8px;
+        }
+        
+        @keyframes zoom {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover {
+            color: #bbb;
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .nav-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .prev {
+            left: 30px;
+        }
+        
+        .next {
+            right: 30px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-gradient">Sridhar Pasala</a>
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors">← Back to Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-12 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">RobustAI Platform</h1>
+            <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                A revolutionary AI automation platform creating a "living blueprint" of software ecosystems
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gradient">Platform Screenshots</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Screenshot 1 -->
+                <div class="gallery-item bg-white rounded-2xl p-4 shadow-lg" onclick="openModal('images/robustai-screenshot1.png', 'RobustAI Platform Dashboard')">
+                    <img src="images/robustai-screenshot1.png" alt="RobustAI Platform Dashboard" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Platform Dashboard</h3>
+                    <p class="text-gray-600 text-sm">Main interface showing system project management view</p>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="gallery-item bg-white rounded-2xl p-4 shadow-lg" onclick="openModal('images/robustai-screenshot2.png', 'Code Analysis Interface')">
+                    <img src="images/robustai-screenshot2.png" alt="Project Specification Interface" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Project Specification</h3>
+                    <p class="text-gray-600 text-sm">Project Specification created from short description using AI Agents</p>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="gallery-item bg-white rounded-2xl p-4 shadow-lg" onclick="openModal('images/robustai-screenshot3.png', 'Automation Workflow')">
+                    <img src="images/robustai-screenshot3.png" alt="Requirement Model" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Requirement Model</h3>
+                    <p class="text-gray-600 text-sm">AI-driven Requirement Analysis using the project specification as base context </p>
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">About RobustAI Platform</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Key Features</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                Swarm Intelligence for code analysis
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                Continuous metadata generation
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+                                Safe AI-driven modifications
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                Integrated identity & state management
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Technologies</h4>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">AI Agents</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Enterprise</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Automation</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LLM Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="nav-arrow prev" onclick="previousImage()">&#10094;</button>
+        <button class="nav-arrow next" onclick="nextImage()">&#10095;</button>
+        <img class="modal-content" id="modalImage">
+        <div class="text-center mt-4">
+            <p id="modalCaption" class="text-white text-lg"></p>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: 'images/robustai-screenshot1.png', caption: 'RobustAI Platform Dashboard' },
+            { src: 'images/robustai-screenshot2.png', caption: 'Code Analysis Interface' },
+            { src: 'images/robustai-screenshot3.png', caption: 'Automation Workflow' }
+        ];
+        
+        let currentImageIndex = 0;
+
+        function openModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            currentImageIndex = images.findIndex(img => img.src === imageSrc);
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption;
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateModalImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modalImg.src = images[currentImageIndex].src;
+            modalCaption.textContent = images[currentImageIndex].caption;
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal.style.display === 'block') {
+                if (event.key === 'Escape') {
+                    closeModal();
+                } else if (event.key === 'ArrowRight') {
+                    nextImage();
+                } else if (event.key === 'ArrowLeft') {
+                    previousImage();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
